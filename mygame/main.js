@@ -1,3 +1,11 @@
+let map = {
+    x: 0,
+    y: 0,
+    width: window.outerWidth,
+    height: window.outerHeight,
+    color: '#f5f5f5'
+}
+
 let cube = {
     x: 0,
     y: 0,
@@ -9,13 +17,23 @@ let cube = {
     color: 'black'
 }
 
-let map = {
+let bots = [];
+
+let bot = {
     x: 0,
     y: 0,
-    width: 470,
-    height: 470,
-    color: '#f5f5f5'
+    id: 1,
+    width: 56,
+    height: 56,
+    trn: .25,
+    step: 56,
+    color: 'red'
 }
 
+bots.push(bot);
+
 renderMap(map);
-renderCube(cube);
+renderCube(spawnCube(map, cube));
+renderBots(bots);
+
+console.log(window);
